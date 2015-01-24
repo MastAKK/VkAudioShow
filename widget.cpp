@@ -217,7 +217,7 @@ void Widget::replyFinished(QNetworkReply *reply){
             file->close();
             qDebug() << file->fileName();
         }
-        delete file;r
+        delete file;
     }
 
     reply->deleteLater();
