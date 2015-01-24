@@ -64,7 +64,7 @@ Widget::Widget(QString token, QString uid, QWidget *parent) :
 
 Widget::~Widget(){
     qDebug() << "Destroyed";
-    exit(0);
+    exit(1);
 }
 
 void Widget::readConfig(){ //Чтение конфигурации из файла. При его отсутствии - создаём и читаем снова.
@@ -109,9 +109,11 @@ void Widget::iconActivated(QSystemTrayIcon::ActivationReason reason){
         break;
     case QSystemTrayIcon::Context:
         qApp->quit();
+        deleteLater();
         break;
     case QSystemTrayIcon::DoubleClick:
         qApp->quit();
+        deleteLater();
         break;
     default:
         ;
@@ -217,7 +219,7 @@ void Widget::replyFinished(QNetworkReply *reply){
             file->close();
             qDebug() << file->fileName();
         }
-        delete file;r
+        delete file;
     }
 
     reply->deleteLater();

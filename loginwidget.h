@@ -11,10 +11,13 @@ class LogInWidget : public QWidget
 
 public:
     explicit LogInWidget(QWidget *parent = 0);
+    ~LogInWidget();
 
 private:
     QWebView* view;
     QLineEdit* line;
+
+    bool m_loggedIn;
 
 private slots:
     void slot_loadFinished(bool b);
