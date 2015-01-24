@@ -26,7 +26,7 @@ HEADERS  += widget.h \
     runningline.h \
     programconfigwindow.h
 
-lessThan(QT_MAJOR_VERSION, 5){
-    LIBS += -LD:\\libs\\qjson-master-build\\src -llibqjson
-    INCLUDEPATH += D:\\libs\\qjson-master\\include
+lessThan(QT_MAJOR_VERSION, 5){ #Qt 4.*
+    LIBS += -LD:\\libs\\qjson-master-build\\src -llibqjson #path of QJson libs
+    INCLUDEPATH += D:\\libs\\qjson-master\\include #path of QJson includes
 }
