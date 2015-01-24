@@ -1,0 +1,2 @@
+font=Segoe UI
+opacity=0.8
